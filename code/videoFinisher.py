@@ -28,7 +28,7 @@ KEEP_FRAMES = args.keep_frames
 
 
 
-command = "ffmpeg -r 30 -f image2 -s 1920x1080 -i "+INPUT_FILE+"_frames/f%06d.png -i "+INPUT_FILE+".wav -vcodec libx264 -b 4M -c:a aac -strict -2 "+INPUT_FILE+"_final.mp4 "
+command = "ffmpeg -r 30 -f image2 -s 1080x1920 -i "+INPUT_FILE+"_frames/f%06d.png -i "+INPUT_FILE+".wav -vcodec libx264 -b:v 4M -pix_fmt yuv420p -c:a aac -strict experimental "+INPUT_FILE+"_final.mp4"
 subprocess.call(command, shell=True)
 
 if KEEP_FRAMES == "F":

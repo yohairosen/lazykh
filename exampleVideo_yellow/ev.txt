@@ -1,0 +1,35 @@
+<explain> Today, we’ll start with the basics and build up from there.
+Let’s look at the problem, break it down, and find a solution.
+Identifying the approach is key, so let's focus on that.
+Then, we’ll double-check everything to ensure it aligns.
+If there’s any error, we’ll correct and learn from it.
+
+<happy> I’m so proud of everyone’s progress so far!
+It’s amazing to see your understanding growing each day.
+I love the energy everyone brings to each session.
+Watching you all improve is the best feeling!
+Let’s keep this positive momentum going!
+
+<sad> I know it’s tough, and that’s okay—it’s part of learning.
+Frustration shows that you care about getting it right.
+Remember, things take time, and that’s completely normal.
+Challenges mean you’re learning, even if it’s slow.
+We’ll work through this step-by-step together.
+
+<angry> It’s frustrating when people give up too quickly.
+Let’s not let one setback hold us back from progress.
+I know it’s not fair when answers don’t come easily.
+Use that frustration to push forward and stay motivated.
+We’re here to support each other through the tough parts.
+
+<confused> Wait—am I understanding this correctly?
+I think I see it, but the logic feels unclear.
+Something doesn’t match the earlier explanation—thoughts?
+Should we apply the rule here, or is there an exception?
+I need to clarify this step to feel sure of the approach.
+
+<rq> Could you help me understand this part better?
+I’d love to hear how others approached this.
+Anyone have extra insight on this step?
+Seeing a different perspective would really help!
+Could we review this again to make sure it’s clear?

@@ -12,12 +12,12 @@ FRAME_START_RENDER_AT  = 0
 PRINT_EVERY = 10
 FRAME_RATE = 30
 PARTS_COUNT = 5
-W_W = 1920
-W_H = 1080
+W_W = 1080
+W_H = 1920
 W_M = 20
 EMOTION_POSITIVITY = [1,1,0,0,0,1]
 POSE_COUNT = 30
-SCRIBBLE_W = 880
+SCRIBBLE_W = 1000
 SCRIBBLE_H = 1000
 
 MAX_JIGGLE_TIME = 7
@@ -64,12 +64,26 @@ def drawFrame(frameNum,paragraph,emotion,imageNum,pose,phoneNum,poseTimeSinceLas
 
     if USE_BILLBOARDS and scribble is not None:
         img1 = ImageDraw.Draw(frame)
-        img1.rectangle([(s_X+W_M-4,W_M-4),(s_X+W_W/2-W_M+8,W_H-W_M+8)], fill ="#603810")
-        img_centerX = s_X+W_M*2+SCRIBBLE_W*0.5
-        img_centerY = W_M*2+SCRIBBLE_H*0.5
-        img_pasteX = int(round(img_centerX-s_W/2))
-        img_pasteY = int(round(img_centerY-s_H/2))
-        frame.paste(scribble,(img_pasteX,img_pasteY))
+
+        # Set the rectangle size to be 10px larger on each side of the scribble dimensions
+        scribble_width, scribble_height = s_W, s_H
+        extra_margin = 10
+
+        # Calculate the top-left corner to be horizontally centered and 20px from the top
+        x_middle = (frame.width - scribble_width) / 2
+        top_margin = 20
+
+        # Define the top-left and bottom-right points, adding 10px padding on all sides
+        top_left = (x_middle - extra_margin, top_margin - extra_margin)
+        bottom_right = (x_middle + scribble_width + extra_margin, top_margin + scribble_height + extra_margin)
+
+        # Draw the larger rectangle frame
+        img1.rectangle([top_left, bottom_right], fill="#603810")
+
+        # Paste the scribble in the original position
+        img_pasteX = int(x_middle)
+        img_pasteY = top_margin
+        frame.paste(scribble, (img_pasteX, img_pasteY))
 
     jiggleFactor = 1
     if ENABLE_JIGGLING:
@@ -77,10 +91,13 @@ def drawFrame(frameNum,paragraph,emotion,imageNum,pose,phoneNum,poseTimeSinceLas
         jiggleFactor = pow(1.07,preJF)
 
     blinker = 0
-    blinkFactor = poseTimeSinceLast%60
-    if blinkFactor == 57 or blinkFactor == 58:
+    blinkSpeed = 30  # Change this value to control blink speed (lower = faster)
+
+    blinkFactor = poseTimeSinceLast % blinkSpeed
+
+    if blinkFactor >= blinkSpeed - 2:  # Adjusts blink timing based on blinkSpeed
         blinker = 2
-    elif blinkFactor >= 56:
+    elif blinkFactor == blinkSpeed - 3:
         blinker = 1
 
     poseIndex = emotion*5+pose
@@ -108,16 +125,20 @@ def drawFrame(frameNum,paragraph,emotion,imageNum,pose,phoneNum,poseTimeSinceLas
     nw = ow/jiggleFactor
     inh = int(round(nh))
     inw = int(round(nw))
-    inx = int(round(W_W*0.75-nw/2))
-    if inx < 300:
-        inx -= 50
-    else:
-        inx += 50
+    inx = int(round(W_W / 2 - nw / 2))
+    print(inx)
+    # if inx < 300:
+    
+    # else:
+        # inx += 200
     iny = int(round(W_H-nh))
     body = body.resize((inw,inh), Image.Resampling.LANCZOS)
 
     if FLIPPED:
         body = body.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
+        inx += 400
+    else:
+        inx += 200
     frame.paste(body,(inx-s_X,iny),body)
     if not os.path.isdir(INPUT_FILE+"_frames"):
         os.makedirs(INPUT_FILE+"_frames")

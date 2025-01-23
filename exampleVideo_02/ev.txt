@@ -1,0 +1,30 @@
+<explain> Today we’re going to start from the fundamentals and gradually build our understanding with each step we take forward.
+Let’s take a detailed look at the core of the problem break it down piece by piece and find the best possible solution.
+Recognizing the right approach is essential so let’s prioritize focusing on that carefully.
+Once we’ve settled on a method we’ll thoroughly double-check every element to ensure it all aligns accurately.
+If there’s any issue or error we’ll address it immediately and see it as an opportunity to grow and learn.
+<happy> I’m genuinely so proud of the progress everyone’s making every day—well done!
+It’s incredibly exciting to see how each of you is developing such a strong understanding of these concepts.
+I absolutely love the energy and enthusiasm that everyone brings to each session we have together.
+Watching each of you improve little by little is honestly the most rewarding feeling for me!
+Let’s keep this positive energy flowing as we move forward learning even more as a team!
+<sad> I know that it’s tough sometimes and that’s completely okay—learning isn’t always easy.
+Feeling frustrated is natural and shows that you genuinely care about mastering this.
+Remember real progress takes time patience and steady effort and that’s perfectly normal.
+Each challenge we encounter means you’re learning even if the pace feels slower than you’d like.
+We’re in this together and we’ll work through everything step-by-step as a team.
+<angry> It’s so frustrating when people choose to give up before giving themselves a fair chance.
+We can’t let a single setback hold us back from the progress we’re capable of making.
+I know it doesn’t seem fair when the right answers don’t come easily.
+Let’s use any frustration as fuel to push forward and keep our motivation strong.
+We’re here to support each other through even the toughest parts.
+<confused> Wait—am I understanding this correctly or am I missing something important?
+I think I see where this is going but some of the logic still feels a bit unclear.
+Something about this doesn’t seem to match the earlier explanation—what do you think?
+Should we apply the rule in this case or might there be an exception here?
+I need to clarify this step before I feel confident in moving forward with this approach.
+<rq> Could you help me understand this part better and explain how you’re interpreting it?
+I’d really love to hear how others approached this challenge to see if I’m on track.
+Does anyone have additional insight or a different perspective on this particular step?
+Seeing someone else’s perspective would really help me get a better grasp on this!
+Could we go over this once more just to make sure that everyone’s clear on it?
